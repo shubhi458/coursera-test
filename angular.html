@@ -1,0 +1,49 @@
+<!--Task 1 for student details and marksheet printing-->
+<!-- <div id="studentDetails">
+ <p> Name:<span>{{details.fname+" "+details.lname}}</span></p>
+ <p> Address:<span>{{details.address}}</span></p>
+ <p> Age:<span>{{details.age}}</span></p>
+ <p> Phone number:<span>{{details.phoneno}}</span></p>
+</div>
+
+<div id="studentMarksheet">
+  <table class="table table-striped">
+    <thead>
+      <td>{{"ID"}}</td>
+      <td>{{"Subject Name"}}</td>
+        <td>{{"Marks"}}</td>
+       <td>{{"Grade"}}</td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let x of marksheet">
+      <td>{{x.id}}</td>
+      <td>{{x.subjectName}}</td>
+      <td>{{x.marks}}</td>
+      <td *ngIf="x.marks>70; then first"></td> 
+      <td *ngIf="x.marks>=50 && x.marks<=70; then second"></td>
+      <td *ngIf="x.marks<50; then third"></td> -->
+     
+      <!-- <ng-container *ngIf="x.marks>70;else second"><td>A</td></ng-container>
+      <ng-template #second >
+        <ng-container *ngIf="x.marks>=50;else third"><td>B</td></ng-container>
+      </ng-template>
+      <ng-template #third><td>C</td></ng-template> -->
+     
+    <!-- </tr>
+  </tbody>
+  </table>
+</div>
+
+<ng-template #first><td>A</td></ng-template>
+<ng-template #second><td>B</td></ng-template>
+<ng-template #third><td>C</td></ng-template> -->
+
+<div id="entryGroup" class="text-center">
+  <input #newItem type="text" placeholder="Enter title" value={{value}}><span><button type="button" class="btn btn-primary" value="Click" (click)="addNewItem(newItem.value)">{{button}}</button></span>
+</div>
+<div id="showGroup">
+  <ul class="list-group" *ngFor="let x of list">
+    <li class="list-group-item">{{x.id+" "}},{{x.title+" "}},{{x.date+" "}}<button class="btn btn-success" (click)="updateItem(x.id)">Update</button><button class="btn btn-danger" (click)="deleteItem(x)">Delete</button></li>
+    
+  </ul>
+</div>
